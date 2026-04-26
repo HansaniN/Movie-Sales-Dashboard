@@ -1,46 +1,35 @@
-# 🎬 Movie Sales Dashboard
+# 🎬 Movie Sales & Performance Dashboard (2007–2011)
 
 ## 📸 Dashboard Preview
 ![Movie Sales Dashboard](Dashboard.png)
 
-## 📊 Project Overview
-This Excel dashboard analyzes Hollywood’s most profitable movies (2007–2011) using a Kaggle dataset.  
-The objective is to evaluate movie performance through revenue, profitability, and audience/critic reception.
+An interactive Excel dashboard analyzing the financial performance and critical reception of Hollywood films (2007–2011).  
+Built using the Kaggle dataset: [Hollywood’s Most Profitable Stories](https://www.kaggle.com/datasets/brendan45774/hollywood-most-profitable-stories).
 
-Dataset used:  
-[Hollywood’s Most Profitable Stories](https://www.kaggle.com/datasets/brendan45774/hollywood-most-profitable-stories)
+---
+
+## 📊 Project Overview
+This project explores how **financial success** (Worldwide Gross, Profitability) aligns with **audience and critic reception**.  
+
+The dashboard enables users to identify trends across **genres, studios, and years**, while evaluating whether highly rated films are always the most profitable.
 
 ---
 
 ## 📊 Key KPIs
-- **Total Titles Analyzed:** 74 films  
-- **Total Global Revenue:** $10.09B  
+- **Total Movies Analyzed:** 74  
+- **Total Worldwide Gross:** $10.09B  
 - **Average Profitability Index:** 4.74  
 - **Top Grossing Movie:** *The Twilight Saga: New Moon*  
 - **Most Profitable Movie:** *Fireproof*  
 - **Top Studio:** Warner Bros.  
-- **Top Performing Genre:** Comedy  
+- **Top Genre:** Comedy  
 
 ---
 
-## 🧮 Feature Engineering: Combined Score
+## 🛠️ Data Transformation & Logic
 
-To better evaluate movie reception, a new metric was created by combining audience and critic ratings.
-
-### 📊 Combined Score Formula
-
-:contentReference[oaicite:0]{index=0}
-
-This metric balances:
-- Audience perception (Audience Score %)
-- Critical reviews (Rotten Tomatoes %)
-
----
-
-### 🏷️ Sentiment Classification
-
-A derived column was created to categorize movies based on Combined Score:
+### 🔹 Combined Score
+A custom metric was created to balance audience and critic perspectives:
 
 ```excel
-=IF([@[Combined Score]]>=75,"High",
-IF([@[Combined Score]]>40,"Medium","Low"))
+Combined Score = (Audience Score % + Rotten Tomatoes %) / 2
