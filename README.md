@@ -4,10 +4,11 @@
 ![Movie Sales Dashboard](Dashboard.png)
 
 ## 📊 Project Overview
-This project analyzes Hollywood’s movie performance and profitability trends from 2007 to 2011 using Excel dashboards.  
-The objective is to identify key drivers of box office success, including genre performance, studio dominance, and profitability trends.
+This Excel dashboard analyzes Hollywood’s most profitable movies (2007–2011) using a Kaggle dataset.  
+The objective is to evaluate movie performance through revenue, profitability, and audience/critic reception.
 
-Dataset used: [Hollywood’s Most Profitable Stories](https://www.kaggle.com/datasets/brendan45774/hollywood-most-profitable-stories)
+Dataset used:  
+[Hollywood’s Most Profitable Stories](https://www.kaggle.com/datasets/brendan45774/hollywood-most-profitable-stories)
 
 ---
 
@@ -22,41 +23,24 @@ Dataset used: [Hollywood’s Most Profitable Stories](https://www.kaggle.com/dat
 
 ---
 
-## 📈 Visualizations
-- Top 10 Movies by Worldwide Gross  
-- Top 10 Most Profitable Movies  
-- Genre-wise Revenue Analysis  
-- Box Office Trends (2007–2011)  
-- Average Profitability by Genre  
+## 🧮 Feature Engineering: Combined Score
+
+To better evaluate movie reception, a new metric was created by combining audience and critic ratings.
+
+### 📊 Combined Score Formula
+
+:contentReference[oaicite:0]{index=0}
+
+This metric balances:
+- Audience perception (Audience Score %)
+- Critical reviews (Rotten Tomatoes %)
 
 ---
 
-## 📌 Key Insights
-- Warner Bros dominates both production and revenue performance  
-- Comedy films show the highest average profitability  
-- Box office performance peaks around 2009–2010  
-- High revenue does not always indicate high profitability  
-- Certain mid-budget films outperform blockbuster productions in ROI  
+### 🏷️ Sentiment Classification
 
----
+A derived column was created to categorize movies based on Combined Score:
 
-## 🧰 Tools Used
-- Microsoft Excel  
-- Pivot Tables & Pivot Charts  
-- Data Cleaning & Transformation  
-- Kaggle Dataset
-
----
-
-## 🚀 How to Use
-- Open `MovieSalesDashboard.xlsx` in Excel 2016 or later  
-- Use slicers (Year, Genre, Studio, Rating) to filter insights  
-- Explore KPIs for high-level performance overview  
-- Analyze charts to identify trends and patterns  
-
----
-
-## 📝 Notes
-- Revenue values are represented in millions USD in pivot tables  
-- KPI cards convert totals into billions for readability  
-- Designed for clear, recruiter-friendly business insights
+```excel
+=IF([@[Combined Score]]>=75,"High",
+IF([@[Combined Score]]>40,"Medium","Low"))
