@@ -1,4 +1,7 @@
 # 🎬 Movie Sales Dashboard
+## 📸 Dashboard Preview
+![Movie Sales Dashboard](dashboard.png)
+
 
 An Excel dashboard analyzing Hollywood’s most profitable stories (2007–2011).  
 Built from the Kaggle dataset: [Hollywood’s Most Profitable Stories](https://www.kaggle.com/datasets/brendan45774/hollywood-most-profitable-stories).
