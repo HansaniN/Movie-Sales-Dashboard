@@ -1,6 +1,7 @@
 # 🎬 Movie Sales Dashboard
 ## 📸 Dashboard Preview
-![Movie Sales Dashboard](dashboard.png)
+![Movie Sales Dashboard](Dashboard.png)
+
 
 
 An Excel dashboard analyzing Hollywood’s most profitable stories (2007–2011).  
